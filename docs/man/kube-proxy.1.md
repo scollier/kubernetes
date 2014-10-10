@@ -2,7 +2,7 @@
 % Scott Collier
 % October 2014
 # NAME
-kube-proxy \- Provides the API for kubernetes orchestration.
+kube-proxy \- Provides network proxy services.
 
 # SYNOPSIS
 **kube-proxy** [OPTIONS] COMMAND [arg...]
