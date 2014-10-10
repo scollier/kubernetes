@@ -66,7 +66,7 @@ The the kube-apiserver several options.
 	If non empty, and -cloud_provider is specified, a regular expression for matching minion VMs.
 
 **-port**=8080
-	The port to listen on. Default 8080
+	The port to listen on. Default is 8080.
 
 **-stderrthreshold**=0
 	logs at or above this threshold go to stderr. Default is 0.
