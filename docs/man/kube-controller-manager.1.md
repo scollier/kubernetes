@@ -5,21 +5,20 @@
 kube-controller-manager \- Enforces kubernetes services.
 
 # SYNOPSIS
-**kube-controller-manager** [OPTIONS] COMMAND [arg...]
+**kube-controller-manager** [OPTIONS]
 
 # DESCRIPTION
 
 The **kubernetes** controller manager is really a service that is layered on top of the simple pod API. To enforce this layering, the logic for the replicationController is actually broken out into another server. This server watches etcd for changes to replicationController objects and then uses the public Kubernetes API to implement the replication algorithm.
 
-The the kube-controller-manager several options. 
+The kube-controller-manager has several options.
 
 # OPTIONS
 **-address**=""
 	The address on the local server to listen to. Default 127.0.0.1.
 
-**-allow_privileged**=""
+**-allow_privileged**="false"
 	If true, allow privileged containers.
-
 
 **-address=**"127.0.0.1"
 	The address to serve from.
@@ -65,7 +64,7 @@ The the kube-controller-manager several options.
 
 # EXAMPLES
 
-The kube-controller-manager can be called manually or from systemd.  An example unit file looks as such:
+The kube-controller-manager can be called manually or from systemd. An example unit file looks as such:
 
 	[Unit]
 	Description=Kubernetes Controller Manager
@@ -85,7 +84,7 @@ The kube-controller-manager can be called manually or from systemd.  An example 
 	WantedBy=multi-user.target
 
 
-Where the variables are stored  in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ enfironment files.
 
 # HISTORY
 October 2014, Originally compiled by Scott Collier (scollier at redhat dot com) based

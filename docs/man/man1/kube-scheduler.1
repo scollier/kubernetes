@@ -6,14 +6,14 @@ kube\-scheduler \- Schedules containers on hosts.
 
 .SH SYNOPSIS
 .PP
-\fBkube\-scheduler\fP [OPTIONS] COMMAND [arg...]
+\fBkube\-scheduler\fP [OPTIONS]
 
 .SH DESCRIPTION
 .PP
 The \fBkubernetes\fP scheduler is a policy\-rich, topology\-aware, workload\-specific function that significantly impacts availability, performance, and capacity. The scheduler needs to take into account individual and collective resource requirements, quality of service requirements, hardware/software/policy constraints, affinity and anti\-affinity specifications, data locality, inter\-workload interference, deadlines, and so on. Workload\-specific requirements will be exposed through the API as necessary.
 
 .PP
-The the kube\-scheduler has several options.
+The kube\-scheduler can take several options.
 
 .SH OPTIONS
 .PP
@@ -74,7 +74,7 @@ The the kube\-scheduler has several options.
 
 .SH EXAMPLES
 .PP
-The kube\-scheduler can be called manually or from systemd.  An example unit file looks as such:
+The kube\-scheduler can be called manually or from systemd. An example unit file looks as such:
 
 .PP
 .RS
@@ -99,7 +99,7 @@ WantedBy=multi\-user.target
 .fi
 
 .PP
-Where the variables are stored  in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ environment files.
 
 .SH HISTORY
 .PP

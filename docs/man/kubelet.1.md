@@ -5,13 +5,11 @@
 kubelet \- Processes a container manifest so the containers are launched according to how they are described.
 
 # SYNOPSIS
-**kubelet** [OPTIONS] COMMAND [arg...]
+**kubelet** [OPTIONS]
 
 # DESCRIPTION
 
-The **kubernetes** kubelet runs on the node. The Kubelet is the logical successor (and rewritten in go) of the Container Agent that is part of the Compute Engine image.
-
-The Kubelet works in terms of a container manifest. A container manifest (defined here) is a YAML file that describes a pod. The Kubelet takes a set of manifests that are provided in various mechanisms and ensures that the containers described in those manifests are started and continue running.
+The **kubernetes** kubelet runs on each node. The Kubelet works in terms of a container manifest. A container manifest is a YAML or JSON file that describes a pod. The Kubelet takes a set of manifests that are provided in various mechanisms and ensures that the containers described in those manifests are started and continue running.
 
 There are 4 ways that a container manifest can be provided to the Kubelet:
 
@@ -74,10 +72,10 @@ There are 4 ways that a container manifest can be provided to the Kubelet:
 	The port for the info server to serve on.
 
 **-registry_burst**=10
-	Maximum size of a bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry_qps.  Only used if --registry_qps > 0.
+	Maximum size of a bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry_qps. Only used if --registry_qps > 0.
 
 **-registry_qps**=0
-	If > 0, limit registry pull QPS to this value.  If 0, unlimited. [default=0.0].
+	If > 0, limit registry pull QPS to this value. If 0, unlimited. [default=0.0].
 
 **-root_dir**="/var/lib/kubelet"
 	Directory path for managing kubelet files (volume mounts,etc).
@@ -100,12 +98,12 @@ There are 4 ways that a container manifest can be provided to the Kubelet:
 
 # EXAMPLES
 
-The kubelet can be called manually or from systemd.  An example unit file looks as such:
+The kubelet can be called manually or from systemd. An example unit file looks as such:
 
 	[Unit]
 	Description=Kubernetes Kubelet
 	After=docker.socket cadvisor.service
-	Requires=docker.socket cadvisor.service
+	Requires=docker.socket
 	
 	[Service]
 	EnvironmentFile=/etc/kubernetes/config
@@ -123,7 +121,7 @@ The kubelet can be called manually or from systemd.  An example unit file looks 
 	[Install]
 	WantedBy=multi-user.target
 
-Where the variables are stored in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ environment files.
 
 # HISTORY
 October 2014, Originally compiled by Scott Collier (scollier at redhat dot com) based

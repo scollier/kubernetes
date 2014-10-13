@@ -6,14 +6,11 @@ kubelet \- Processes a container manifest so the containers are launched accordi
 
 .SH SYNOPSIS
 .PP
-\fBkubelet\fP [OPTIONS] COMMAND [arg...]
+\fBkubelet\fP [OPTIONS]
 
 .SH DESCRIPTION
 .PP
-The \fBkubernetes\fP kubelet runs on the node. The Kubelet is the logical successor (and rewritten in go) of the Container Agent that is part of the Compute Engine image.
-
-.PP
-The Kubelet works in terms of a container manifest. A container manifest (defined here) is a YAML file that describes a pod. The Kubelet takes a set of manifests that are provided in various mechanisms and ensures that the containers described in those manifests are started and continue running.
+The \fBkubernetes\fP kubelet runs on each node. The Kubelet works in terms of a container manifest. A container manifest is a YAML or JSON file that describes a pod. The Kubelet takes a set of manifests that are provided in various mechanisms and ensures that the containers described in those manifests are started and continue running.
 
 .PP
 There are 4 ways that a container manifest can be provided to the Kubelet:
@@ -101,11 +98,11 @@ HTTP server The kubelet can also listen for HTTP and respond to a simple API (un
 
 .PP
 \fB\-registry\_burst\fP=10
-    Maximum size of a bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry\_qps.  Only used if \-\-registry\_qps > 0.
+    Maximum size of a bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry\_qps. Only used if \-\-registry\_qps > 0.
 
 .PP
 \fB\-registry\_qps\fP=0
-    If > 0, limit registry pull QPS to this value.  If 0, unlimited. [default=0.0].
+    If > 0, limit registry pull QPS to this value. If 0, unlimited. [default=0.0].
 
 .PP
 \fB\-root\_dir\fP="/var/lib/kubelet"
@@ -133,7 +130,7 @@ HTTP server The kubelet can also listen for HTTP and respond to a simple API (un
 
 .SH EXAMPLES
 .PP
-The kubelet can be called manually or from systemd.  An example unit file looks as such:
+The kubelet can be called manually or from systemd. An example unit file looks as such:
 
 .PP
 .RS
@@ -142,7 +139,7 @@ The kubelet can be called manually or from systemd.  An example unit file looks 
 [Unit]
 Description=Kubernetes Kubelet
 After=docker.socket cadvisor.service
-Requires=docker.socket cadvisor.service
+Requires=docker.socket
 
 [Service]
 EnvironmentFile=/etc/kubernetes/config
@@ -163,7 +160,7 @@ WantedBy=multi\-user.target
 .fi
 
 .PP
-Where the variables are stored in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ environment files.
 
 .SH HISTORY
 .PP

@@ -5,13 +5,13 @@
 kube-proxy \- Provides network proxy services.
 
 # SYNOPSIS
-**kube-proxy** [OPTIONS] COMMAND [arg...]
+**kube-proxy** [OPTIONS]
 
 # DESCRIPTION
 
-The **kubernetes** network proxy runs on each node. This reflects services as defined in the Kubernetes API on each node and can do simple TCP stream forwarding or round robin TCP forwarding across a set of backends. Service endpoints are currently found through Docker-links-compatible environment variables specifying ports opened by the service proxy. Currently the user must select a unique port to expose the service on on the proxy, as well as the container's port to target.
+The **kubernetes** network proxy runs on each node. This reflects services as defined in the Kubernetes API on each node and can do simple TCP stream forwarding or round robin TCP forwarding across a set of backends. Service endpoints are currently found through Docker-links-compatible environment variables specifying ports opened by the service proxy. Currently the user must select a port to expose the service on on the proxy, as well as the container's port to target.
 
-The the kube-proxy several options. 
+The kube-proxy takes several options.
 
 # OPTIONS
 **-alsologtostderr**=false
@@ -62,7 +62,7 @@ The the kube-proxy several options.
 
 # EXAMPLES
 
-The kube-proxy can be called manually or from systemd.  An example unit file looks as such:
+The kube-proxy can be called manually or from systemd. An example unit file looks as such:
 
 	[Unit]
 	Description=Kubernetes Proxy
@@ -82,7 +82,7 @@ The kube-proxy can be called manually or from systemd.  An example unit file loo
 	[Install]
 	WantedBy=multi-user.target
 
-Where the variables are stored  in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ directory.
 
 # HISTORY
 October 2014, Originally compiled by Scott Collier (scollier at redhat dot com) based

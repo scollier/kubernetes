@@ -5,7 +5,7 @@
 kube-apiserver \- Provides the API for kubernetes orchestration.
 
 # SYNOPSIS
-**kube-apiserver** [OPTIONS] COMMAND [arg...]
+**kube-apiserver** [OPTIONS]
 
 # DESCRIPTION
 
@@ -21,19 +21,19 @@ The the kube-apiserver several options.
 	If true, allow privileged containers.
 
 **-alsologtostderr**=
-	log to standard error as well as files.  Default is false.
+	log to standard error as well as files. Default is false.
 
 **-api_prefix**="/api"
 	The prefix for API requests on the server. Default '/api'
 
 **-cloud_config**=""
-	The path to the cloud provider configuration file.  Empty string for no configuration file.
+	The path to the cloud provider configuration file. Empty string for no configuration file.
 
 **-cloud_provider**=""
-	The provider for cloud services.  Empty string for no provider.
+	The provider for cloud services. Empty string for no provider.
 
 **-cors_allowed_origins**=[]
-	List of allowed origins for CORS, comma separated.  An allowed origin can be a regular expression to support subdomain matching.  If this list is empty CORS will not be enabled.
+	List of allowed origins for CORS, comma separated. An allowed origin can be a regular expression to support subdomain matching. If this list is empty CORS will not be enabled.
 
 **-etcd_servers**=[]
 	List of etcd servers to watch (http://ip:port), comma separated
@@ -85,7 +85,7 @@ The the kube-apiserver several options.
 
 # EXAMPLES
 
-The kube-apiserver can be called manually or from systemd.  An example unit file looks as such:
+The kube-apiserver can be called manually or from systemd. An example unit file looks as such:
 
 	[Unit]
 	Description=Kubernetes API Server
@@ -108,7 +108,7 @@ The kube-apiserver can be called manually or from systemd.  An example unit file
 	[Install]
 	WantedBy=multi-user.target
 
-Where the variables are stored  in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ environment files.
 
 # HISTORY
 October 2014, Originally compiled by Scott Collier (scollier at redhat dot com) based

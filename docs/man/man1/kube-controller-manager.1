@@ -6,14 +6,14 @@ kube\-controller\-manager \- Enforces kubernetes services.
 
 .SH SYNOPSIS
 .PP
-\fBkube\-controller\-manager\fP [OPTIONS] COMMAND [arg...]
+\fBkube\-controller\-manager\fP [OPTIONS]
 
 .SH DESCRIPTION
 .PP
 The \fBkubernetes\fP controller manager is really a service that is layered on top of the simple pod API. To enforce this layering, the logic for the replicationController is actually broken out into another server. This server watches etcd for changes to replicationController objects and then uses the public Kubernetes API to implement the replication algorithm.
 
 .PP
-The the kube\-controller\-manager several options.
+The kube\-controller\-manager has several options.
 
 .SH OPTIONS
 .PP
@@ -21,7 +21,7 @@ The the kube\-controller\-manager several options.
     The address on the local server to listen to. Default 127.0.0.1.
 
 .PP
-\fB\-allow\_privileged\fP=""
+\fB\-allow\_privileged\fP="false"
     If true, allow privileged containers.
 
 .PP
@@ -82,7 +82,7 @@ The the kube\-controller\-manager several options.
 
 .SH EXAMPLES
 .PP
-The kube\-controller\-manager can be called manually or from systemd.  An example unit file looks as such:
+The kube\-controller\-manager can be called manually or from systemd. An example unit file looks as such:
 
 .PP
 .RS
@@ -108,7 +108,7 @@ WantedBy=multi\-user.target
 .fi
 
 .PP
-Where the variables are stored  in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ enfironment files.
 
 .SH HISTORY
 .PP

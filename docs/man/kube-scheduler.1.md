@@ -5,13 +5,13 @@
 kube-scheduler \- Schedules containers on hosts.
 
 # SYNOPSIS
-**kube-scheduler** [OPTIONS] COMMAND [arg...]
+**kube-scheduler** [OPTIONS]
 
 # DESCRIPTION
 
-The **kubernetes** scheduler is a policy-rich, topology-aware, workload-specific function that significantly impacts availability, performance, and capacity. The scheduler needs to take into account individual and collective resource requirements, quality of service requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, deadlines, and so on. Workload-specific requirements will be exposed through the API as necessary. 
+The **kubernetes** scheduler is a policy-rich, topology-aware, workload-specific function that significantly impacts availability, performance, and capacity. The scheduler needs to take into account individual and collective resource requirements, quality of service requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, deadlines, and so on. Workload-specific requirements will be exposed through the API as necessary.
 
-The the kube-scheduler has several options. 
+The kube-scheduler can take several options.
 
 # OPTIONS
 **-address=**"127.0.0.1"
@@ -58,7 +58,7 @@ The the kube-scheduler has several options.
 
 # EXAMPLES
 
-The kube-scheduler can be called manually or from systemd.  An example unit file looks as such:
+The kube-scheduler can be called manually or from systemd. An example unit file looks as such:
 
 	[Unit]
 	Description=Kubernetes Scheduler
@@ -77,7 +77,7 @@ The kube-scheduler can be called manually or from systemd.  An example unit file
 	WantedBy=multi-user.target
 
 
-Where the variables are stored  in the /etc/kubernetes/ directory.
+Where the variables are stored in the /etc/kubernetes/ environment files.
 
 # HISTORY
 October 2014, Originally compiled by Scott Collier (scollier@redhat.com) based
